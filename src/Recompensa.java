@@ -1,21 +1,17 @@
 public class Recompensa {
     private String nombre;
-    private int costoPuntos;
+    private int costo;
 
-    public Recompensa(String nombre, int costoPuntos) {
+    public Recompensa(String nombre, int costo) {
         this.nombre = nombre;
-        this.costoPuntos = costoPuntos;
+        this.costo = costo;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getCostoPuntos() {
-        return costoPuntos;
-    }
-
-    public boolean canjear(int puntosDisponibles) {
-        return puntosDisponibles >= costoPuntos;
+    public int getCosto() {
+        return costo;
     }
 }

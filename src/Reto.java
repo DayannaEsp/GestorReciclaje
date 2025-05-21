@@ -3,20 +3,27 @@ public class Reto {
     private int objetivo;
     private int progreso;
     private int recompensa;
+    private boolean completado;
 
     public Reto(String descripcion, int objetivo, int recompensa) {
         this.descripcion = descripcion;
         this.objetivo = objetivo;
         this.recompensa = recompensa;
         this.progreso = 0;
+        this.completado = false;
     }
 
     public void registrarReciclaje(int cantidad) {
-        progreso += cantidad;
+        if (!completado) {
+            progreso += cantidad;
+            if (progreso >= objetivo) {
+                completado = true;
+            }
+        }
     }
 
     public boolean completado() {
-        return progreso >= objetivo;
+        return completado;
     }
 
     public int getRecompensa() {
